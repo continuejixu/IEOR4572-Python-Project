@@ -7,7 +7,7 @@ This is a website to help people to look for lease or rent in NYC.
 * If you are a visitor looking for a place, it shows you a list of properties that match your options by filtering data stored on MongoDB. Highest matching property comes with a word cloud based on the previous user reviews by **Natural Language Processing** and **Sentiment Analysis**. The website also gives suggested prices to visitors after taking sentiment analysis scores into account.
 
 ### Screenshots of Website
-![screenshot1](screenshots/screenshot1.png)
+![screenshot1](screenshots/screenshot1.png){:height="50%" width="50%"}
 ![screenshot2](screenshots/screenshot2.png | width=400 height=200)
 
 ### Video link to go over the website
