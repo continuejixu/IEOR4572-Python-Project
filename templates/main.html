@@ -1,0 +1,110 @@
+{%extends "header.html"%}
+
+{%block body%}
+
+<head>
+	 <meta charset="utf-8">
+	 <title>Our Airbnb</title>
+
+<style>
+  body {
+          background: 
+            url('/static/images/backgroundgif.gif');
+          background-size: cover;
+          width: 100%;
+          height: 100%;
+          position: relative;
+          float: left;
+        }
+  img {
+    max-width: 100%;
+    height: auto;
+    position: relative;
+    top: -10px;
+}
+
+  .button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  position: relative;
+  top: -260px;
+
+
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s
+}
+
+.button span:after {
+  content: '\00bb';
+  position: relative;
+  opacity: 0;
+  top: 30%;
+  right: -10px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+</style>
+</head>
+
+
+
+<body>
+
+    <div class="header mid">
+        
+       <img src="{{url_for('static',filename='images/logo.png')}}" >
+    </div>
+     
+
+
+<h2>
+<div align='Center' class="container-fluid">
+
+<a href="/lease/"><button type="button" class="button" aria-label="Left Align" style="vertical-align: middle; margin-top: 80px; margin-right: 20px">
+    <span class="glyphicon" aria-hidden="true"></span>LEASE
+  </button></a>
+
+  <a href="/index"><button type="button" class="button" aria-label="Left Align" style="vertical-align: middle; margin-top: 80px; margin-right: 20px">
+    <span class="glyphicon " aria-hidden="true"></span>RENT
+  </button></a>
+
+
+     </div>
+</h2>
+
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+	<script type="text/javascript" src="{{url_for('static',filename='js/bootstrap.min.js') }}"></script>
+
+
+
+
+</body>
+
+
+{%endblock%}
+

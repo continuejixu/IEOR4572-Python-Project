@@ -1,0 +1,364 @@
+{%extends "header.html"%}
+
+{%block body%}
+<head>
+<style>
+body{
+
+    background: 
+      url('/static/images/background.jpg');
+    background-size: cover;
+    width: 100%;
+    height: 150px;
+    position: relative;
+    float: left;
+        
+}
+ul{font-size:10px;}
+  caption{
+  font-family: sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+}
+caption{
+	font-family: sans-serif;
+	font-size: 50px;
+	font-weight: bold;
+	text-align: center;
+}
+label{font-family: monospace;
+	font-size: 27px;}
+td {
+  text-align: center;
+  padding: 16px 16px;
+  border: 1px solid #ddd;
+}
+ .button1{background-color: #e7e7e7; color: black;
+    font-size: 40px;
+    border-radius: 12px;
+    transition-duration: 0.4s;
+    padding: 2px 6px;
+    vertical-align: middle;
+    font-family: sans-serif;
+    margin-top: 20px;
+  }
+  .button1:hover {
+    background-color: rgb(255,105,15);
+    color: white;
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+</style>
+</head>
+
+<body>
+
+<form action="{{ url_for('lease_analysis') }}" method='post'>
+
+<div class="u-clearfix">
+
+<div class="sb-group__field">
+
+
+
+<div class="w3-container">
+
+<table class="w3-table-all" style="width: 90%; height: 90%; margin: 70px auto;">
+  <caption class="section-heading">Estimate Your Place!</caption>
+<tbody>
+
+<tr>
+<td class="w3-hover-orange" colspan="3"><div class="sb-group__field">
+<label class="sb-searchbox__label sb-group__field__label -inline -small" for="accommodates">Max Guests</label><br>
+<select name="accommodates" id="accommodates" >
+<option value=1 selected="selected">
+1
+</option>
+<option value=2 >
+2
+</option>
+<option value=3 >
+3
+</option>
+<option value=4 >
+4
+</option>
+<option value=5 >
+5
+</option>
+<option value=6 >
+6
+</option>
+<option value=7 >
+7
+</option>
+<option value=8 >
+8
+</option>
+<option value=9 >
+9
+</option>
+<option value=10 >
+10
+</option>
+<option value=11 >
+11
+</option>
+<option value=12 >
+12
+</option>
+<option value=13 >
+13
+</option>
+<option value=14 >
+14
+</option>
+<option value=15>
+15
+</option>
+</select>
+</div></td>
+
+
+<td class="w3-hover-orange" colspan="3"><div class="sb-group__field">
+<label class="sb-searchbox__label sb-group__field__label -inline -small" for="property_type">
+Building Type
+</label><br>
+<select name="property_type" id="property_type">
+<option value="Apartment" selected="selected">
+Apartment
+</option>
+<option value="Townhouse" >
+Townhouse
+</option>
+<option value="House" >
+House
+</option>
+<option value="Condominium" >
+Condominium
+</option>
+<option value="Bed & Breakfast" >
+Bed & Breakfast
+</option>
+<option value="Hostel" >
+Hostel
+</option>
+<option value="Dorm" >
+Dorm
+</option>
+<option value="Loft" >
+Loft
+</option>
+</tr>
+
+
+<tr>
+<td class="w3-hover-orange" colspan="2">
+<div><label class="sb-searchbox__label sb-group__field__label -inline -small" for="room_type">Room Type</label><br>
+<select name="room_type" id="room_type">
+<option value="Entire home/apt" selected="selected">
+Entire house/apt
+</option>
+<option value="Private room">
+Private room
+</option>
+<option value="Shared room" >
+Shared room
+</option>
+</select>
+</div></td>
+
+
+
+<td class="w3-hover-orange" colspan="2">
+<div class="sb-group__field">
+<label class="sb-searchbox__label sb-group__field__label -inline -small" for="minimum_nights">
+Min Days
+</label><br>
+<select name="minimum_nights" id="minimum_nights" >
+<option value=1 selected="selected">
+1
+</option>
+<option value=2 >
+2
+</option>
+<option value=3 >
+3
+</option>
+<option value=4 >
+4
+</option>
+<option value=5 >
+5
+</option>
+<option value=6 >
+6
+</option>
+<option value=7 >
+7
+</option>
+<option value=8 >
+8
+</option>
+<option value=9 >
+9
+</option>
+<option value=10 >
+10
+</option>
+</select>
+</div></td>
+
+
+
+<td class="w3-hover-orange" colspan="2"><div class="sb-group__field">
+<label class="sb-searchbox__label sb-group__field__label -inline -small" for="cancellation_policy">Cancellation Policy</label><br>
+<select name="cancellation_policy" id="cancellation_policy" >
+<option value="felxible" selected="selected">
+felxible
+</option>
+<option value="long_term">
+long_term
+</option>
+<option value="moderate" >
+moderate
+</option>
+<option value="no_refunds" >
+no_refunds
+</option>
+<option value="strict" >
+strict
+</option>
+<option value="super_strict_30">
+super_strict_30
+</option>
+</select>
+</div></td>
+</tr>
+
+
+
+<tr>
+<td class="w3-hover-orange" colspan="2"><div class="sb-group__field">
+<label class="sb-searchbox__label sb-group__field__label -inline -small" for="review_scores_cleanliness">Clean Rate</label><br>
+<select name="review_scores_cleanliness" id="review_scores_cleanliness" >
+<option value=1 selected="selected">
+1
+</option>
+<option value=2 >
+2
+</option>
+<option value=3 >
+3
+</option>
+<option value=4 >
+4
+</option>
+<option value=5 >
+5
+</option>
+<option value=6 >
+6
+</option>
+<option value=7 >
+7
+</option>
+<option value=8 >
+8
+</option>
+<option value=9 >
+9
+</option>
+<option value=10 >
+10
+</option>
+</select>
+</div></td>
+
+
+
+<td class="w3-hover-orange" colspan="2"><div class="sb-group__field">
+<label class="sb-searchbox__label sb-group__field__label -inline -small" for="review_scores_communication">Communication Rate</label><br>
+<select name="review_scores_communication" id="review_scores_communication" >
+<option value=1 selected="selected">
+1
+</option>
+<option value=2 >
+2
+</option>
+<option value=3 >
+3
+</option>
+<option value=4 >
+4
+</option>
+<option value=5 >
+5
+</option>
+<option value=6 >
+6
+</option>
+<option value=7 >
+7
+</option>
+<option value=8 >
+8
+</option>
+<option value=9 >
+9
+</option>
+<option value=10 >
+10
+</option>
+</select>
+</div></td>
+
+
+
+<td class="w3-hover-orange" colspan="2"><div class="sb-group__field">
+<label class="sb-searchbox__label sb-group__field__label -inline -small" for="review_scores_location">Position Rate</label><br>
+<select name="review_scores_location" id="review_scores_location" >
+<option value=1 selected="selected">
+1
+</option>
+<option value=2 >
+2
+</option>
+<option value=3 >
+3
+</option>
+<option value=4 >
+4
+</option>
+<option value=5 >
+5
+</option>
+<option value=6 >
+6
+</option>
+<option value=7 >
+7
+</option>
+<option value=8 >
+8
+</option>
+<option value=9 >
+9
+</option>
+<option value=10 >
+10
+</option>
+</select>
+</div></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+<div align="center">
+    <input type='submit' class="button1" value='Estimate'>
+  </div>
+
+</body>
+{%endblock%}

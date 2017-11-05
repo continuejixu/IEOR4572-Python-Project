@@ -1,0 +1,269 @@
+﻿<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!--[if IE]>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <![endif]-->
+    <title>Travel Site </title>
+    <!--REQUIRED STYLE SHEETS-->
+    <!-- BOOTSTRAP CORE STYLE CSS -->
+    <link href="{{ url_for('static', filename='assets/css/bootstrap.css') }}" rel="stylesheet" />
+    <!-- FONTAWESOME STYLE CSS -->
+    <link href="{{ url_for('static', filename='assets/css/font-awesome.min.css') }}" rel="stylesheet" />
+    <!--ANIMATED FONTAWESOME STYLE CSS -->
+    <link href="{{ url_for('static', filename='assets/css/font-awesome-animation.css') }}" rel="stylesheet" />
+     <!--PRETTYPHOTO MAIN STYLE -->
+    <link href="{{ url_for('static', filename='assets/css/prettyPhoto.css') }}" rel="stylesheet" />
+       <!-- CUSTOM STYLE CSS -->
+    <link href="{{ url_for('static', filename='assets/css/style.css') }}" rel="stylesheet" />
+    <!-- GOOGLE FONT -->
+    <link href="{{ url_for('static', filename='http://fonts.googleapis.com/css?family=Open+Sans') }}" rel='stylesheet' type='text/css'>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+
+<!--leaflet usage:             -->
+ <!--   <link rel="stylesheet" href = "http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+    <script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>-->
+
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7/leaflet.css" />
+    
+
+ <style type="text/css">
+      table, th, td{
+        border-collapse: collapse;
+          border:1px solid black;
+          margin:1px;
+          padding:2px;
+          font-family:'Open Sans','Trebuchet MS','Arial',sans-serif;
+          font-size:14px;
+          
+      }
+      th {
+          background-color: #4CAF50;
+          color: white;
+      }
+      tr:nth-child(odd) {
+        background-color: #f2f2f2
+      }
+
+  </style>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]--></head>
+<body>
+     <!-- NAV SECTION -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+       
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"></a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="{{ url_for('home') }}" style="color:#CCCCCC; font-size: 20px">HOME{{real_price}}</a></li>
+                    <li><a href="{{ url_for('lease') }}" style="color:#CCCCCC; font-size: 20px">LEASE</a></li>
+                     <li><a href="{{ url_for('index') }}" style="color:#CCCCCC; font-size: 20px">RENT</a></li>
+                    <li><a href="{{ url_for('team') }}" style="color:#CCCCCC; font-size: 20px">CONTACT</a></li>
+                    <!--
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="Package.html">PACKAGE</a></li>
+                     <li><a href="Gallery.html">GALLERY</a></li>
+                    <li><a href="Contact.html">CONTACT</a></li>
+                </ul>
+            </div>
+           
+        </div>
+    </div>
+     <!--END NAV SECTION -->
+    
+    <!--HOME SECTION-->
+    <div id="home-sec">
+
+   
+    <div class="container"  >
+        <div class="row text-center">
+            <div  class="col-md-12" >
+            <!--
+                <span class="head-main" >Welcome</span>
+                <h3 class="head-last col-md-4 col-md-offset-4  col-sm-6 col-sm-offset-3">Choose the best option!</h3>
+            -->
+                 
+            </div>
+        </div>
+    </div>
+         </div>
+    
+
+    <section  id="services-sec">
+        <div class="container">
+            <div class="row ">
+                <div class="text-center g-pad-bottom">
+                    <div class="col-md-4 col-sm-4 alert-info">
+                            <h4>Listing ID</h4>
+                              <p> {{data[0][0]}}
+                              </p>
+                              
+                              <!--
+                              <br>
+                              Count: {{count}}
+                                -->
+                            
+                    </div>
+                    <div class="col-md-4 col-sm-4 alert-success">
+                            <h4>Real Price </h4>
+                             <p> {{real_price}}</p>
+                                                            
+                    </div>
+                   
+                    <div class="col-md-4 col-sm-4 alert-danger">
+                            <h4> Sentiment Score </h4>
+                            <p>
+                                {{score}}
+                            </p>
+                          
+                    </div>
+                </div>
+                  </div>
+                <div class="row go-marg">
+                  
+                    <div class="col-md-4 col-sm-4">
+                        <div class="panel panel-default">
+                       
+                        <div class="panel-body">
+                        <h4>Word Cloud </h4>     
+                        <img src="{{ url_for('static', filename='assets/img/word_cloud.padding') }}" height=300 width=300>
+                            
+                        </div>
+                    </div> 
+                            
+                    </div>
+                   <div class="col-md-4 col-sm-4">
+                        <div class="panel panel-default">
+                       
+                        <div class="panel-body">
+                            <h4 class="adjst">List of Properties </h4>
+                            <script type="text/javascript">
+                                var details = {{data|tojson}};
+                                document.write("<table>");
+                                document.write("<thead> <tr><th>ID</th><th>PRICE</th></tr></thead>");
+                                document.write("<tbody>");
+                                for (var i = 0; i < details.length; i++)
+                                {
+                                    document.write("<tr>");
+                                    document.write("<td><a href="+"{{ url_for('home') }}"+">"+details[i][0]+"</a></td>");
+                                    document.write("<td>"+details[i][1]+"</td>");
+                                    document.write("</tr>");
+                                        
+                                    }
+                                document.write("</tbody>");
+                                document.write("</table>");
+
+                                
+                            </script>
+                            
+                        </div>
+                    </div> 
+                            
+                    </div>
+                     <div class="col-md-4 col-sm-4">
+                          <div class="panel panel-default">
+                       
+                        <div class="panel-body">
+
+                        <div id="map" style="width: 400px; height: 400px"></div>
+                        <script
+                            src="http://cdn.leafletjs.com/leaflet-0.7/leaflet.js">
+                        </script>
+<!-- set global at root -->
+                       
+                                <script>
+                                
+/*
+                                var planes = [
+                                    ["7C6B07",-40.99497,174.50808],
+                                    ["7C6B38",-41.30269,173.63696],
+                                    ["7C6CA1",-41.49413,173.5421],
+                                    ["7C6CA2",-40.98585,174.50659],
+                                    ["C81D9D",-40.93163,173.81726],
+                                    ["C82009",-41.5183,174.78081],
+                                    ["C82081",-41.42079,173.5783],
+                                    ["C820AB",-42.08414,173.96632],
+                                    ["C820B6",-41.51285,173.53274]
+                                    ];
+*/
+                                var planes = {{data|tojson|safe}};
+
+                                    var map = L.map('map').setView([40.739, -73.920], 14);
+                                    mapLink = 
+                                        '<a href="http://openstreetmap.org">OpenStreetMap</a>';
+                                    L.tileLayer(
+                                        'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                                        attribution: '&copy; ' + mapLink + ' Contributors',
+                                        maxZoom: 18,
+                                        }).addTo(map);
+
+                                    for (var i = 0; i < planes.length; i++) {
+                                        marker = new L.marker([planes[i][2],planes[i][3]]).addTo(map).bindPopup(planes[i][2]);
+                                    }
+                               /*
+                                function onMapClick(e){
+                                    //alert("You clicked at"+e.latlng);
+                                    window.location.href = "http://127.0.0.1:5000/word_cloud?"+e.latlng;
+                                }
+                                //map.on('click',onMapClick);
+                                marker.on('click',onMapClick);
+*/
+                                </script>
+                                                         
+                            
+                        </div>
+                    </div> 
+                            
+                    </div>
+                </div>
+          
+        </div>
+    </section>
+    <!--END HOME SECTION-->
+  
+    
+
+   
+
+    <!--FOOTER SECTION -->
+    <div id="footer">
+        2017 www.neighbor.com | All Right Reserved  
+         
+    </div>
+    <!-- END FOOTER SECTION -->
+
+    <!-- JAVASCRIPT FILES PLACED AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
+    <!-- CORE JQUERY  
+    <script src="{{ url_for('static', filename='assets/plugins/jquery-1.10.2.js') }}"></script>-->
+    <!-- BOOTSTRAP CORE SCRIPT   -->
+    <script src="{{ url_for('static', filename='assets/plugins/bootstrap.min.js') }}"></script>  
+     <!-- ISOTOPE SCRIPT   -->
+    <script src="{{ url_for('static', filename='assets/plugins/jquery.isotope.min.js') }}"></script>
+    <!-- PRETTY PHOTO SCRIPT   -->
+    <script src="{{ url_for('static', filename='assets/plugins/jquery.prettyPhoto.js') }}"></script>    
+    <!-- CUSTOM SCRIPTS -->
+    <script src="{{ url_for('static', filename='assets/js/custom.js') }}"></script>
+
+</body>
+</html>

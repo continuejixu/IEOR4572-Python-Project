@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="utf-8">
+   <title>AirbnbHeader</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!--[if IE]>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <![endif]-->
+    <!--REQUIRED STYLE SHEETS-->
+    <!-- BOOTSTRAP CORE STYLE CSS -->
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet" >
+    <!-- FONTAWESOME STYLE CSS -->
+    <link href="{{ url_for('static', filename='css/font-awesome.min.css') }}" rel="stylesheet" >
+   
+    <!--ANIMATED FONTAWESOME STYLE CSS -->
+    <link href="{{ url_for('static', filename='css/font-awesome-animation.css') }}" rel="stylesheet" >
+     <!--PRETTYPHOTO MAIN STYLE -->
+     <link href="{{ url_for('static', filename='css/prettyPhoto.css') }}" rel="stylesheet" >
+       <!-- CUSTOM STYLE CSS -->
+      <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" >
+       <link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+
+      <link href="//fonts.googleapis.com/css?family=Kaushan+Script " rel="stylesheet" type="text/css">
+
+      <link href="//fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic " rel="stylesheet" type="text/css">
+
+      <link href="//fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700 " rel="stylesheet" type="text/css">
+
+      <link rel="stylesheet" href="//www.w3schools.com/w3css/4/w3.css">
+
+
+<style>
+  img{
+    max-width: 130%;
+    max-height:200%;
+    position: relative;
+    top: -10px;
+  }
+  .navbar {
+    background-color: rgb(33,33,33);
+
+  }
+
+</style>
+
+</head>
+
+
+<header>
+
+
+      <!-- NAV SECTION -->
+         <div class="navbar navbar-toggleable-md navbar-inverse navbar-fixed-top">
+       
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/"> <img src="{{ url_for('static', filename='images/logo_header.png') }}" ;></a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/" style="color:#CCCCCC; font-size: 20px">HOME</a></li>
+                    <li><a href="{{ url_for('lease') }}" style="color:#CCCCCC; font-size: 20px">LEASE</a></li>
+                     <li><a href="{{ url_for('index') }}" style="color:#CCCCCC; font-size: 20px">RENT</a></li>
+                    <li><a href="{{ url_for('team') }}" style="color:#CCCCCC; font-size: 20px">CONTACT</a></li>
+                </ul>
+            </div>
+           
+        </div>
+    </div>
+     <!--END NAV SECTION -->  
+
+
+</header>
+
+
+<body>
+    
+    <div class="broader-row" style="width:100%; margin-bottom: 15px;"> </div>
+
+    <div class="container-fluid" style="min-height:100% width">
+      {%block body%}  {%endblock%}
+
+
+    </div>
+
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+  <script type="text/javascript" src="{{url_for('static',filename='js/bootstrap.min.js') }}"></script>
+
+    <script src="assets/plugins/jquery-1.10.2.js"></script>
+    <!-- BOOTSTRAP CORE SCRIPT   -->
+    <script src="assets/plugins/bootstrap.min.js"></script>  
+     <!-- ISOTOPE SCRIPT   -->
+    <script src="assets/plugins/jquery.isotope.min.js"></script>
+    <!-- PRETTY PHOTO SCRIPT   -->
+    <script src="assets/plugins/jquery.prettyPhoto.js"></script>    
+    <!-- CUSTOM SCRIPTS -->
+    <script src="assets/js/custom.js"></script>
+
+</body>
+
+ </html>
+
