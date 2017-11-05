@@ -8,9 +8,9 @@ This is a website to help people to look for lease or rent in NYC.
 
 ### Screenshots of Website
 
-<img align="left" width="500" height="250" src="screenshots/screenshot1.png"> <br /> <br />
-<img align="left" width="500" height="250" src="screenshots/screenshot2.png"> <br /> <br />
-<img align="left" width="500" height="250" src="screenshots/screenshot3.png"> <br />
+<img align="left" width="500" height="250" src="screenshots/screenshot1.png">       
+<img align="left" width="500" height="250" src="screenshots/screenshot2.png">          
+<img align="left" width="500" height="250" src="screenshots/screenshot3.png">          
 
 ### Video link to go over the website
 [HERE](https://www.youtube.com/watch?v=u0cxEK7kcGs&feature=youtu.be)
