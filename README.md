@@ -8,6 +8,8 @@ This is a website to help people to look for lease or rent in NYC.
 
 ### Screenshots of Website
 ![screenshot1](screenshots/screenshot1.png){:height="50%" width="50%"}
+<img align="left" width="100" height="100" src="screenshots/screenshot2.png">
+
 ![screenshot2](screenshots/screenshot2.png | width=400 height=200)
 
 ### Video link to go over the website
